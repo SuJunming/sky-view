@@ -211,12 +211,14 @@ class Home extends React.Component<any, any> {
                 Add Feature
               </div>
             )}
-            <div
-              className="handle-item"
-              onClick={() => this.setState({ deleteVisible: true, show: -1 })}
-            >
-              Delete
-            </div>
+            {this.item.name !== 'Features' && (
+              <div
+                className="handle-item"
+                onClick={() => this.setState({ deleteVisible: true, show: -1 })}
+              >
+                Delete
+              </div>
+            )}
           </div>
         )}
         <Sider>
