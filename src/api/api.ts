@@ -1,5 +1,5 @@
 export default {
-  getFiles: '/api/getFiles',
-  delete: '/api/delete',
-  addComponent: '/api/addComponent',
+  getFiles: '/skyApi/getFiles',
+  delete: '/skyApi/delete',
+  addComponent: '/skyApi/addComponent',
 }

@@ -11,7 +11,7 @@ const preStyle: any = {
 const MyFallbackComponent = (props: any) => (
   <pre style={preStyle}>{props.error.message}</pre>
 )
-const connectRedux = (key: string, component: any) => {
+const connectRedux = (key: any, component: any) => {
   if (!obj[key]) {
     console.error('请添加或导出modal')
   }

@@ -16,6 +16,8 @@
     "resolveJsonModule": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noEmit": true,
     "strict": true /* Enable all strict type-checking options. */,
     "noImplicitThis": true /* Raise error on 'this' expressions with an implied 'any' type. */,
     "noImplicitReturns": true /* Report error when not all code paths in function return a value. */,
@@ -24,6 +26,7 @@
     "paths": {
       "@ct": ["./src/utils/Connect.tsx"],
       "@src": ["./src"],
+      "@src/*": ["./src/*"],
       "@api": ["./src/api"],
       "@components": ["../src/components"]
     } /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */,
