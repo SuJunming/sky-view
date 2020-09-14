@@ -172,6 +172,7 @@ class Home extends React.Component<any, any> {
     this.setState({ show: -1, deleteVisible: false })
   }
   addItem = () => {
+    const { addType } = this.state
     this.formRef.current.validateFields().then(async (values: any) => {
       values.p = this.item.path
       await this.props.actions.addComponent(values)

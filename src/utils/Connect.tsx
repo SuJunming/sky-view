@@ -17,9 +17,10 @@ const connectRedux = (key: string, component: any) => {
   }
   const mapState = (state: any) => ({
     [key]: state[key],
+    allState: state,
   })
   const mapDispatch = (data: any) => {
-    return ({ actions: { ...data[key] } })
+    return { actions: { ...data[key] } }
   }
   return connect(mapState, mapDispatch)(component)
 }
@@ -36,11 +37,11 @@ export const Ct = ({ model, Component, title }: any) => {
       }
     }
     componentWillMount() {
-      NProgress.start();
+      NProgress.start()
     }
     componentDidMount() {
       if (title && title.trim() !== document.title.trim()) {
-        (window as any).setTitle(title)
+        ;(window as any).setTitle(title)
       }
       NProgress.done()
     }
