@@ -70,13 +70,11 @@ class Home extends React.Component<any, any> {
   }
   componentDidMount() {
     this.props.actions.getFiles()
-
     document.addEventListener(
       'mousedown',
       (e) => this.handleClickOutside(e),
       false,
     )
-    setInterval(this.props.actions.getFiles, 15000)
   }
   componentWillUnmount() {
     document.removeEventListener(
@@ -343,6 +341,7 @@ class Home extends React.Component<any, any> {
               <Select placeholder="please select component type">
                 <Option value="1">class component</Option>
                 <Option value="2">hooks component</Option>
+                <Option value="3">Table hooks component</Option>
               </Select>
             </Form.Item>
           </Form>

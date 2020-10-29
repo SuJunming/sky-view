@@ -1,0 +1,31 @@
+stages: # 分段
+  - image
+  - build
+  - deploy
+  
+cache: # 缓存
+  paths:
+    - node_modules
+image-job:
+  stage: image
+  when: manual
+  script:
+    - docker build -t hub-docker.tianrang-inc.com/discovery/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME -f docker/Dockerfile .
+    - docker login -u admin -p admin123 hub-docker.tianrang-inc.com
+    - docker push hub-docker.tianrang-inc.com/discovery/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
+    
+build-job:
+  stage: build
+  only:
+    - tags
+  script:
+    - docker build -t hub-docker.tianrang-inc.com/discovery/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME -f docker/Dockerfile .
+    - docker login -u admin -p admin123 hub-docker.tianrang-inc.com
+    - docker push hub-docker.tianrang-inc.com/discovery/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
+    
+deploy-job:
+  stage: deploy
+  only:
+    - tags
+  script:
+    - /etc/runner-script/fe-deploy.sh hub-docker.tianrang-inc.com/discovery/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME $CI_PROJECT_NAME 25102

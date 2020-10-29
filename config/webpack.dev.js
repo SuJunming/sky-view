@@ -60,7 +60,7 @@ const devConfig = {
     inline: true,
     hot: true,
     proxy: {
-      '/api': {
+      '/skyApi': {
         target: 'http://localhost:3001',
         changeOrigin: true,
         pathRewrite: {
