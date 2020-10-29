@@ -1,2 +1,2 @@
-const startRekit = require('sky-rekit/dist/index')
+const startRekit = require('sky-rekit')
 startRekit(3001)

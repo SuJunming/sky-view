@@ -6762,10 +6762,10 @@ simple-swizzle@^0.2.2:
   dependencies:
     is-arrayish "^0.3.1"
 
-sky-rekit@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.npm.taobao.org/sky-rekit/download/sky-rekit-0.1.0.tgz?cache=0&sync_timestamp=1603957068281&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsky-rekit%2Fdownload%2Fsky-rekit-0.1.0.tgz#652483f872e54cdb90babcd5150a0afb8729e115"
-  integrity sha1-ZSSD+HLlTNuQurzVFQoK+4cp4RU=
+sky-rekit@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.npm.taobao.org/sky-rekit/download/sky-rekit-0.1.1.tgz?cache=0&sync_timestamp=1603957375279&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fsky-rekit%2Fdownload%2Fsky-rekit-0.1.1.tgz#b8001e161e411d72c22b6790acd9bcd1f33d5d58"
+  integrity sha1-uAAeFh5BHXLCK2eQrNm80fM9XVg=
   dependencies:
     body-parser "^1.19.0"
     consola "^2.15.0"
