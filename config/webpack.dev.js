@@ -3,7 +3,6 @@ const merge = require('webpack-merge')
 const baseConfig = require('./webpack.config')
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-
 const devConfig = {
   mode: 'development',
   devtool: 'eval-source-map',
