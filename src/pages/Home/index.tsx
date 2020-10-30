@@ -70,6 +70,7 @@ class Home extends React.Component<any, any> {
   }
   componentDidMount() {
     this.props.actions.getFiles()
+    this.props.actions.getTemplates()
     document.addEventListener(
       'mousedown',
       (e) => this.handleClickOutside(e),
@@ -187,7 +188,7 @@ class Home extends React.Component<any, any> {
 
   render() {
     const { show, position, deleteVisible, addVisible, addType } = this.state
-    const { data } = this.props.Home
+    const { data, templates } = this.props.Home
     return (
       <Layout style={{ minHeight: '100vh' }}>
         {show !== -1 && (
@@ -332,16 +333,17 @@ class Home extends React.Component<any, any> {
               </Select>
             </Form.Item>
             <Form.Item
-              name="componentType"
+              name="componentPath"
               label="componentType"
               rules={[
                 { required: true, message: 'please select component type' },
               ]}
             >
               <Select placeholder="please select component type">
-                <Option value="1">class component</Option>
-                <Option value="2">hooks component</Option>
-                <Option value="3">Table hooks component</Option>
+                {templates &&
+                  templates.map((item: any) => {
+                    return <Option value={item.path}>{item.name}</Option>
+                  })}
               </Select>
             </Form.Item>
           </Form>
