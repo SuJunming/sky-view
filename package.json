@@ -7,7 +7,8 @@
     "dev": "NODE_ENV=dev webpack-dev-server --config config/webpack.dev.js --mode development --open",
     "build": "NODE_ENV=prod webpack --config config/webpack.prod.js --mode production",
     "dll": "webpack --config config/webpack.config.dll.js",
-    "d": "supervisor test.js"
+    "d": "supervisor test.js",
+    "bundle": "NODE_ENV=prod webpack --config config/webpack.bundle.js --mode production"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

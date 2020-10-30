@@ -13,7 +13,6 @@ module.exports = {
       'react-redux',
       '@rematch/core',
       'axios',
-      'antd',
       'nprogress',
     ],
   },
